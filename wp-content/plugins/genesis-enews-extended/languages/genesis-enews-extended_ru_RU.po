@@ -1,0 +1,109 @@
+# Translation of Genesis 1.8 in Russian
+# This file is distributed under the same license as the Genesis 1.8 package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Genesis eNews Extended\n"
+"POT-Creation-Date: 2013-01-27 23:18-0600\n"
+"PO-Revision-Date: 2013-01-27 23:20-0600\n"
+"Last-Translator: Brandon Kraft <public@brandonkraft.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../class-bjgk-genesis-enews-extended.php:50
+#, fuzzy
+msgid "Displays subscribe form"
+msgstr "Отображает окно подписки по email на Feedburner"
+
+#: ../class-bjgk-genesis-enews-extended.php:53
+#, fuzzy
+msgid "Genesis - eNews Extended"
+msgstr "Genesis - eNews и обновления"
+
+#: ../class-bjgk-genesis-enews-extended.php:138
+msgid "Title"
+msgstr "Заголовок"
+
+#: ../class-bjgk-genesis-enews-extended.php:143
+msgid "Text To Show"
+msgstr "Текст чтобы показать"
+
+#: ../class-bjgk-genesis-enews-extended.php:148
+msgid "Google/Feedburner ID"
+msgstr "Google/Feedburner ID "
+
+#: ../class-bjgk-genesis-enews-extended.php:150
+msgid ""
+"Entering your Feedburner ID here will deactivate the custom options below."
+msgstr ""
+
+#: ../class-bjgk-genesis-enews-extended.php:154
+#, fuzzy
+msgid "Form Action"
+msgstr "Информация"
+
+#: ../class-bjgk-genesis-enews-extended.php:159
+msgid "E-Mail Field"
+msgstr ""
+
+#: ../class-bjgk-genesis-enews-extended.php:164
+msgid "First Name Field"
+msgstr ""
+
+#: ../class-bjgk-genesis-enews-extended.php:169
+msgid "Last Name Field"
+msgstr ""
+
+#: ../class-bjgk-genesis-enews-extended.php:174
+msgid "Hidden Fields"
+msgstr ""
+
+#: ../class-bjgk-genesis-enews-extended.php:176
+msgid "Not all services use hidden fields."
+msgstr ""
+
+#: ../class-bjgk-genesis-enews-extended.php:181
+msgid "Open confirmation page in same window?"
+msgstr ""
+
+#: ../class-bjgk-genesis-enews-extended.php:185
+msgid "First Name..."
+msgstr ""
+
+#: ../class-bjgk-genesis-enews-extended.php:186
+#, fuzzy
+msgid "First Name Input Text"
+msgstr "Ввести текст"
+
+#: ../class-bjgk-genesis-enews-extended.php:190
+msgid "Last Name..."
+msgstr ""
+
+#: ../class-bjgk-genesis-enews-extended.php:191
+#, fuzzy
+msgid "Last Name Input Text"
+msgstr "Ввести текст"
+
+#: ../class-bjgk-genesis-enews-extended.php:195
+msgid "Enter your email address..."
+msgstr "Введите ваш email"
+
+#: ../class-bjgk-genesis-enews-extended.php:196
+#, fuzzy
+msgid "E-Mail Input Text"
+msgstr "Ввести текст"
+
+#: ../class-bjgk-genesis-enews-extended.php:201
+msgid "Go"
+msgstr "Перейти"
+
+#: ../class-bjgk-genesis-enews-extended.php:202
+msgid "Button Text"
+msgstr "Текст кнопки"

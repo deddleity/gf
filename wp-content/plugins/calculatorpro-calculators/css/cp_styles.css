@@ -1,0 +1,34 @@
+.colorSelector {
+   -moz-background-clip:border;
+   -moz-background-inline-policy:continuous;
+   -moz-background-origin:padding;
+   background:transparent url(../js/colorpicker/images/select2.png) repeat scroll 0 0;
+   height:36px;
+   position:relative;
+   width:36px;
+   float: left;
+
+}
+
+.colorSelector div {
+   -moz-background-clip:border;
+   -moz-background-inline-policy:continuous;
+   -moz-background-origin:padding;
+   background:transparent url(../js/colorpicker/images/select2.png) repeat scroll center center;
+   height:29px;
+   left:3px;
+   position:absolute;
+   top:3px;
+   width:29px;
+}
+
+#widgetBackground { background-color: #378CAF; }
+#widgetEndBackground { background-color: #006395; }
+#widgetText { background-color: #ffffff; }
+
+.colorpicker { background-image:url(../js/colorpicker/images/custom_background.png); bottom:0; left:0; position:absolute; }
+.colorpicker_field { background-image:url(../js/colorpicker/images/custom_rgb_r.png); }
+.colorpicker_hex { background-image:url(../js/colorpicker/images/custom_hex.png); }
+.colorpicker_submit { background-image:url(../js/colorpicker/images/custom_submit.png); }
+
+#cp_shortcode, #widget_preview { margin-left: 10px; margin-top: 5px;}

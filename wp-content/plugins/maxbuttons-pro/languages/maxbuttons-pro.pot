@@ -1,0 +1,626 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: maxbuttons-pro\n"
+"POT-Creation-Date: 2012-12-16 14:32-0500\n"
+"PO-Revision-Date: 2012-12-16 14:32-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: maxbuttons-button.php:133
+msgid "Unnamed Button"
+msgstr ""
+
+#: maxbuttons-button.php:874
+msgid "MaxButtons Pro: Add/Edit Button"
+msgstr ""
+
+#: maxbuttons-button.php:877 maxbuttons-buttons-trash.php:83
+#: maxbuttons-buttons.php:62 maxbuttons-export.php:27 maxbuttons-pack.php:98
+#: maxbuttons-packs.php:85 maxbuttons-support.php:108
+msgid "Brought to you by"
+msgstr ""
+
+#: maxbuttons-button.php:879 maxbuttons-buttons-trash.php:85
+#: maxbuttons-buttons.php:64 maxbuttons-export.php:29 maxbuttons-pack.php:100
+#: maxbuttons-packs.php:87 maxbuttons-support.php:110
+#, php-format
+msgid "makers of %sMaxGalleria%s and %sMaxInbound%s"
+msgstr ""
+
+#: maxbuttons-button.php:886 maxbuttons-buttons-trash.php:124
+#: maxbuttons-buttons.php:105 maxbuttons-export.php:83
+msgid "Button"
+msgstr ""
+
+#: maxbuttons-button.php:891
+msgid "Save"
+msgstr ""
+
+#: maxbuttons-button.php:892 maxbuttons-buttons.php:129
+msgid "Copy"
+msgstr ""
+
+#: maxbuttons-button.php:893 maxbuttons-buttons.php:97
+#: maxbuttons-buttons.php:131
+msgid "Move to Trash"
+msgstr ""
+
+#: maxbuttons-button.php:894 maxbuttons-buttons-trash.php:116
+#: maxbuttons-buttons-trash.php:148
+msgid "Delete Permanently"
+msgstr ""
+
+#: maxbuttons-button.php:898
+msgid ""
+"To use this button, place the following shortcode anywhere in your site "
+"content:"
+msgstr ""
+
+#: maxbuttons-button.php:903
+msgid "Basics"
+msgstr ""
+
+#: maxbuttons-button.php:906
+msgid "Name"
+msgstr ""
+
+#: maxbuttons-button.php:907
+msgid "Something that you can quickly identify the button with."
+msgstr ""
+
+#: maxbuttons-button.php:915
+msgid "Description"
+msgstr ""
+
+#: maxbuttons-button.php:916
+msgid "Brief explanation about how and where the button is used."
+msgstr ""
+
+#: maxbuttons-button.php:924
+msgid "URL"
+msgstr ""
+
+#: maxbuttons-button.php:925
+msgid "The link when the button is clicked."
+msgstr ""
+
+#: maxbuttons-button.php:933
+msgid "Open in New Window"
+msgstr ""
+
+#: maxbuttons-button.php:941
+msgid "Use"
+msgstr ""
+
+#: maxbuttons-button.php:951
+msgid "Dimensions"
+msgstr ""
+
+#: maxbuttons-button.php:954
+msgid "Button Width"
+msgstr ""
+
+#: maxbuttons-button.php:960
+msgid "Button Height"
+msgstr ""
+
+#: maxbuttons-button.php:968 maxbuttons-button.php:1309
+msgid "Text"
+msgstr ""
+
+#: maxbuttons-button.php:975
+msgid "Words"
+msgstr ""
+
+#: maxbuttons-button.php:976
+msgid "Font"
+msgstr ""
+
+#: maxbuttons-button.php:976
+msgid "see examples"
+msgstr ""
+
+#: maxbuttons-button.php:977
+msgid "Size"
+msgstr ""
+
+#: maxbuttons-button.php:978 maxbuttons-button.php:1247
+msgid "Style"
+msgstr ""
+
+#: maxbuttons-button.php:979
+msgid "Weight"
+msgstr ""
+
+#: maxbuttons-button.php:980
+msgid "Align"
+msgstr ""
+
+#: maxbuttons-button.php:981
+#, php-format
+msgid "Padding%sTop"
+msgstr ""
+
+#: maxbuttons-button.php:982
+#, php-format
+msgid "Padding%sBottom"
+msgstr ""
+
+#: maxbuttons-button.php:983
+#, php-format
+msgid "Padding%sLeft"
+msgstr ""
+
+#: maxbuttons-button.php:984
+#, php-format
+msgid "Padding%sRight"
+msgstr ""
+
+#: maxbuttons-button.php:987
+msgid "Line 1"
+msgstr ""
+
+#: maxbuttons-button.php:1055
+msgid "Line 2"
+msgstr ""
+
+#: maxbuttons-button.php:1128 maxbuttons-button.php:1270
+msgid "Shadow Offset Left"
+msgstr ""
+
+#: maxbuttons-button.php:1130 maxbuttons-button.php:1137
+#: maxbuttons-button.php:1144 maxbuttons-button.php:1180
+#: maxbuttons-button.php:1187 maxbuttons-button.php:1194
+#: maxbuttons-button.php:1201 maxbuttons-button.php:1221
+#: maxbuttons-button.php:1228 maxbuttons-button.php:1235
+#: maxbuttons-button.php:1242 maxbuttons-button.php:1258
+#: maxbuttons-button.php:1265 maxbuttons-button.php:1272
+#: maxbuttons-button.php:1279 maxbuttons-button.php:1286
+#: maxbuttons-button.php:1298
+msgid "Default:"
+msgstr ""
+
+#: maxbuttons-button.php:1135 maxbuttons-button.php:1277
+msgid "Shadow Offset Top"
+msgstr ""
+
+#: maxbuttons-button.php:1142 maxbuttons-button.php:1284
+msgid "Shadow Width"
+msgstr ""
+
+#: maxbuttons-button.php:1151
+msgid "Icon"
+msgstr ""
+
+#: maxbuttons-button.php:1154
+msgid "Image"
+msgstr ""
+
+#: maxbuttons-button.php:1157
+msgid "Select..."
+msgstr ""
+
+#: maxbuttons-button.php:1163
+msgid "Position"
+msgstr ""
+
+#: maxbuttons-button.php:1178
+msgid "Padding Top"
+msgstr ""
+
+#: maxbuttons-button.php:1185
+msgid "Padding Bottom"
+msgstr ""
+
+#: maxbuttons-button.php:1192
+msgid "Padding Left"
+msgstr ""
+
+#: maxbuttons-button.php:1199
+msgid "Padding Right"
+msgstr ""
+
+#: maxbuttons-button.php:1206
+msgid "Alt Text"
+msgstr ""
+
+#: maxbuttons-button.php:1216 maxbuttons-button.php:1313
+msgid "Border"
+msgstr ""
+
+#: maxbuttons-button.php:1219
+msgid "Radius Top Left"
+msgstr ""
+
+#: maxbuttons-button.php:1226
+msgid "Radius Top Right"
+msgstr ""
+
+#: maxbuttons-button.php:1233
+msgid "Radius Bottom Left"
+msgstr ""
+
+#: maxbuttons-button.php:1240
+msgid "Radius Bottom Right"
+msgstr ""
+
+#: maxbuttons-button.php:1263 maxbuttons-button.php:1434
+msgid "Width"
+msgstr ""
+
+#: maxbuttons-button.php:1293
+msgid "Colors"
+msgstr ""
+
+#: maxbuttons-button.php:1296
+msgid "Gradient Stop"
+msgstr ""
+
+#: maxbuttons-button.php:1310
+#, php-format
+msgid "Text%sShadow"
+msgstr ""
+
+#: maxbuttons-button.php:1311
+#, php-format
+msgid "Gradient%sStart"
+msgstr ""
+
+#: maxbuttons-button.php:1312
+#, php-format
+msgid "Gradient%sEnd"
+msgstr ""
+
+#: maxbuttons-button.php:1314
+#, php-format
+msgid "Border%sShadow"
+msgstr ""
+
+#: maxbuttons-button.php:1317
+msgid "Normal"
+msgstr ""
+
+#: maxbuttons-button.php:1362
+msgid "Hover"
+msgstr ""
+
+#: maxbuttons-button.php:1414
+msgid "Container"
+msgstr ""
+
+#: maxbuttons-button.php:1417
+msgid "Use Container"
+msgstr ""
+
+#: maxbuttons-button.php:1425
+msgid "Wrap with Center Div"
+msgstr ""
+
+#: maxbuttons-button.php:1440
+msgid "Margin Top"
+msgstr ""
+
+#: maxbuttons-button.php:1446
+msgid "Margin Right"
+msgstr ""
+
+#: maxbuttons-button.php:1452
+msgid "Margin Bottom"
+msgstr ""
+
+#: maxbuttons-button.php:1458
+msgid "Margin Left"
+msgstr ""
+
+#: maxbuttons-button.php:1464
+msgid "Alignment"
+msgstr ""
+
+#: maxbuttons-button.php:1482
+msgid "Button Output"
+msgstr ""
+
+#: maxbuttons-button.php:1484
+msgid "The top is the normal button, the bottom one is the hover."
+msgstr ""
+
+#: maxbuttons-button.php:1542
+msgid "Change this color to see your button on a different background."
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:15 maxbuttons-buttons-trash.php:43
+msgid "Restored 1 button."
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:19
+#, php-format
+msgid "Restored %s buttons."
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:32 maxbuttons-buttons-trash.php:47
+msgid "Deleted 1 button."
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:36
+#, php-format
+msgid "Deleted %s buttons."
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:80 maxbuttons-buttons.php:59
+msgid "MaxButtons Pro: Buttons"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:92 maxbuttons-buttons.php:71
+#: maxbuttons-export.php:36 maxbuttons-packs.php:94 maxbuttons-pro.php:120
+#: maxbuttons-pro.php:141 maxbuttons-support.php:117
+msgid "Buttons"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:93 maxbuttons-buttons.php:72
+#: maxbuttons-export.php:37 maxbuttons-packs.php:95 maxbuttons-pro.php:116
+#: maxbuttons-pro.php:153 maxbuttons-support.php:118
+msgid "Packs"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:94 maxbuttons-buttons.php:73
+#: maxbuttons-export.php:38 maxbuttons-packs.php:96 maxbuttons-pro.php:160
+#: maxbuttons-support.php:119
+msgid "Export"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:95 maxbuttons-buttons.php:74
+#: maxbuttons-export.php:39 maxbuttons-packs.php:97 maxbuttons-pro.php:167
+#: maxbuttons-support.php:120
+msgid "Support"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:99 maxbuttons-buttons.php:78
+#: maxbuttons-pro.php:146
+msgid "Add New"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:107 maxbuttons-buttons.php:86
+msgid "All"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:109 maxbuttons-buttons.php:90
+msgid "Trash"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:114 maxbuttons-buttons.php:96
+msgid "Bulk Actions"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:115 maxbuttons-buttons-trash.php:146
+msgid "Restore"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:118 maxbuttons-buttons.php:99
+msgid "Apply"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:125 maxbuttons-buttons.php:106
+#: maxbuttons-export.php:84
+msgid "Name and Description"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:126 maxbuttons-buttons.php:107
+#: maxbuttons-export.php:85
+msgid "Shortcode"
+msgstr ""
+
+#: maxbuttons-buttons-trash.php:127 maxbuttons-buttons.php:108
+msgid "Actions"
+msgstr ""
+
+#: maxbuttons-buttons.php:15 maxbuttons-buttons.php:26
+msgid "Moved 1 button to the trash."
+msgstr ""
+
+#: maxbuttons-buttons.php:19
+#, php-format
+msgid "Moved %s buttons to the trash."
+msgstr ""
+
+#: maxbuttons-buttons.php:127
+msgid "Edit"
+msgstr ""
+
+#: maxbuttons-export.php:24
+msgid "MaxButtons Pro: Export"
+msgstr ""
+
+#: maxbuttons-export.php:43
+msgid "Export Buttons"
+msgstr ""
+
+#: maxbuttons-export.php:46
+msgid ""
+"Exporting your buttons creates a button pack zip file. Fill out the short "
+"form below, then select which buttons to export."
+msgstr ""
+
+#: maxbuttons-export.php:52
+msgid "Pack Name"
+msgstr ""
+
+#: maxbuttons-export.php:59
+msgid "Pack<br />Description"
+msgstr ""
+
+#: maxbuttons-export.php:66
+msgid "Pack Author"
+msgstr ""
+
+#: maxbuttons-export.php:73
+msgid "Pack Author URL"
+msgstr ""
+
+#: maxbuttons-font-examples.php:8
+msgid "Button Font Examples"
+msgstr ""
+
+#: maxbuttons-font-examples.php:62
+msgid "This is"
+msgstr ""
+
+#: maxbuttons-pack.php:95
+msgid "MaxButtons Pro: Button Pack"
+msgstr ""
+
+#: maxbuttons-pack.php:107
+msgid "Button Pack"
+msgstr ""
+
+#: maxbuttons-pack.php:138
+#, php-format
+msgid "%sName: %s"
+msgstr ""
+
+#: maxbuttons-pack.php:155
+#, php-format
+msgid "%sDelete This Pack%s"
+msgstr ""
+
+#: maxbuttons-pack.php:161
+#, php-format
+msgid "%sButtons%s"
+msgstr ""
+
+#: maxbuttons-pack.php:167
+#, php-format
+msgid "%sButton%s"
+msgstr ""
+
+#: maxbuttons-pack.php:168
+#, php-format
+msgid "%sName and Description%s"
+msgstr ""
+
+#: maxbuttons-pack.php:169
+#, php-format
+msgid "%sActions%s"
+msgstr ""
+
+#: maxbuttons-pack.php:375
+#, php-format
+msgid "%sCopy This Button%s"
+msgstr ""
+
+#: maxbuttons-pack.php:390
+#, php-format
+msgid "There is no %s%s%s"
+msgstr ""
+
+#: maxbuttons-packs.php:39
+#, php-format
+msgid "The %s%s%s button pack file was imported successfully."
+msgstr ""
+
+#: maxbuttons-packs.php:43
+#, php-format
+msgid "The %s%s%s button pack file could not be unzipped."
+msgstr ""
+
+#: maxbuttons-packs.php:48
+#, php-format
+msgid "The %s%s%s button pack file could not be saved to the filesystem."
+msgstr ""
+
+#: maxbuttons-packs.php:53
+#, php-format
+msgid "Only %sZIP%s files are supported for importing button packs."
+msgstr ""
+
+#: maxbuttons-packs.php:58
+msgid "No file was selected."
+msgstr ""
+
+#: maxbuttons-packs.php:82
+msgid "MaxButtons Pro: Packs"
+msgstr ""
+
+#: maxbuttons-packs.php:106
+msgid "Import Button Pack"
+msgstr ""
+
+#: maxbuttons-packs.php:107
+msgid "Select a button pack file to upload then click \"Import\"."
+msgstr ""
+
+#: maxbuttons-packs.php:112
+msgid "Import"
+msgstr ""
+
+#: maxbuttons-packs.php:117
+msgid "Need More Buttons?"
+msgstr ""
+
+#: maxbuttons-packs.php:118
+msgid ""
+"We have an ever-growing collection of button packs for you to choose from."
+msgstr ""
+
+#: maxbuttons-packs.php:119
+msgid "View All Button Packs"
+msgstr ""
+
+#: maxbuttons-packs.php:123
+msgid "Available Button Packs"
+msgstr ""
+
+#: maxbuttons-packs.php:159
+#, php-format
+msgid "%sBy: "
+msgstr ""
+
+#: maxbuttons-packs.php:175
+msgid "Delete"
+msgstr ""
+
+#: maxbuttons-pro.php:132
+msgid "MaxButtons Pro : Buttons"
+msgstr ""
+
+#: maxbuttons-pro.php:133
+msgid "MaxButtons Pro"
+msgstr ""
+
+#: maxbuttons-pro.php:145
+msgid "MaxButtons Pro : Add/Edit Button"
+msgstr ""
+
+#: maxbuttons-pro.php:152
+msgid "MaxButtons Pro : Packs"
+msgstr ""
+
+#: maxbuttons-pro.php:159
+msgid "MaxButtons Pro : Export"
+msgstr ""
+
+#: maxbuttons-pro.php:166
+msgid "MaxButtons Pro : Support"
+msgstr ""
+
+#: maxbuttons-support.php:105
+msgid "MaxButtons Pro: Support"
+msgstr ""
+
+#: maxbuttons-support.php:123
+#, php-format
+msgid "All support is handled through the %sSupport Forums%s."
+msgstr ""
+
+#: maxbuttons-support.php:125
+msgid ""
+"You may be asked to provide the information below to help troubleshoot your "
+"issue."
+msgstr ""
