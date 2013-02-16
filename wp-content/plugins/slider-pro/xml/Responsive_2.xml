@@ -22,8 +22,8 @@
     <slide_start>0</slide_start>
     <pause_slideshow_on_hover>1</pause_slideshow_on_hover>
     <keyboard_navigation>1</keyboard_navigation>
-    <slide_arrows>0</slide_arrows>
-    <slide_buttons>0</slide_buttons>
+    <slide_arrows>1</slide_arrows>
+    <slide_buttons>1</slide_buttons>
     <timer_animation>0</timer_animation>
     <timer_toggle>0</timer_toggle>
     <effect_type>fade</effect_type>
@@ -64,7 +64,6 @@
   <custom_css><![CDATA[.responsive-slider {
 	font-family: Verdana;
 	font-size: 14px;
-	min-height: 400px;
 }
 
 
@@ -85,7 +84,7 @@
 }]]></custom_css>
   <slides>
     <slide>
-      <id>742</id>
+      <id>774</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide3]]></name>
       <content>
@@ -116,29 +115,25 @@
       <visibility>enabled</visibility>
     </slide>
     <slide>
-      <id>743</id>
+      <id>775</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide2]]></name>
       <content>
-        <image><![CDATA[http://174.132.161.150/~georgefa/wp-content/uploads/2013/02/Old_Folks.jpg]]></image>
+        <image><![CDATA[http://gf.dev/wp-content/uploads/2013/02/retiree-slider.jpg]]></image>
         <alt><![CDATA[]]></alt>
         <title><![CDATA[]]></title>
         <thumbnail_image><![CDATA[http://174.132.161.150/~georgefa/wp-content/uploads/2013/01/possible_slider2_thumb.jpg]]></thumbnail_image>
         <thumbnail_alt><![CDATA[]]></thumbnail_alt>
         <thumbnail_title><![CDATA[]]></thumbnail_title>
         <thumbnail_content><![CDATA[]]></thumbnail_content>
-        <layer_3_content><![CDATA[I am a call to action. I\'ll tell you what to do next.
-&lt;br /&gt;
-[maxbutton id=\&quot;6\&quot;]]]></layer_3_content>
-        <slide_link_path><![CDATA[]]></slide_link_path>
+        <slide_link_path><![CDATA[/]]></slide_link_path>
         <slide_link_title><![CDATA[]]></slide_link_title>
         <thumbnail_link_path><![CDATA[]]></thumbnail_link_path>
         <thumbnail_link_title><![CDATA[]]></thumbnail_link_title>
       </content>
       <settings>
         <layers_num>3</layers_num>
-        <layers_ids>+3+</layers_ids>
-        <layer_3_settings>layer_transition=none+layer_offset=50+layer_easing=swing+layer_duration=400+layer_delay=0+layer_position=bottomLeft+layer_horizontal=50%+layer_vertical=30%+layer_width=auto+layer_height=auto+layer_preset_styles=white,static,rounded</layer_3_settings>
+        <layers_ids>+</layers_ids>
         <slide_link_target>_self</slide_link_target>
         <slide_link_lightbox>0</slide_link_lightbox>
         <thumbnail_link_target>_self</thumbnail_link_target>
@@ -147,33 +142,29 @@
       </settings>
       <position>2</position>
       <panel_state>opened</panel_state>
-      <selected_tab>2</selected_tab>
+      <selected_tab>3</selected_tab>
       <visibility>enabled</visibility>
     </slide>
     <slide>
-      <id>744</id>
+      <id>776</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide1]]></name>
       <content>
-        <image><![CDATA[http://gf.dev/wp-content/uploads/2013/02/Young_Professionals.jpg]]></image>
+        <image><![CDATA[http://gf.dev/wp-content/uploads/2013/02/young-professional-slider.jpg]]></image>
         <alt><![CDATA[]]></alt>
         <title><![CDATA[]]></title>
         <thumbnail_image><![CDATA[http://174.132.161.150/~georgefa/wp-content/uploads/2013/02/slider1.jpg]]></thumbnail_image>
         <thumbnail_alt><![CDATA[]]></thumbnail_alt>
         <thumbnail_title><![CDATA[]]></thumbnail_title>
         <thumbnail_content><![CDATA[]]></thumbnail_content>
-        <layer_6_content><![CDATA[I am a call to action. I\'ll tell you what to do next.
-&lt;br /&gt;
-[maxbutton id=\&quot;6\&quot;]]]></layer_6_content>
-        <slide_link_path><![CDATA[]]></slide_link_path>
+        <slide_link_path><![CDATA[/]]></slide_link_path>
         <slide_link_title><![CDATA[]]></slide_link_title>
         <thumbnail_link_path><![CDATA[]]></thumbnail_link_path>
         <thumbnail_link_title><![CDATA[]]></thumbnail_link_title>
       </content>
       <settings>
         <layers_num>6</layers_num>
-        <layers_ids>+6+</layers_ids>
-        <layer_6_settings>layer_transition=none+layer_offset=50+layer_easing=swing+layer_duration=400+layer_delay=0+layer_position=topLeft+layer_horizontal=40%+layer_vertical=40%+layer_width=auto+layer_height=auto+layer_preset_styles=white,static,rounded</layer_6_settings>
+        <layers_ids>+</layers_ids>
         <slide_link_target>_self</slide_link_target>
         <slide_link_lightbox>0</slide_link_lightbox>
         <thumbnail_link_target>_self</thumbnail_link_target>
@@ -182,46 +173,11 @@
       </settings>
       <position>3</position>
       <panel_state>opened</panel_state>
-      <selected_tab>2</selected_tab>
+      <selected_tab>3</selected_tab>
       <visibility>enabled</visibility>
     </slide>
     <slide>
-      <id>745</id>
-      <slider_id>2</slider_id>
-      <name><![CDATA[Slide6]]></name>
-      <content>
-        <image><![CDATA[http://174.132.161.150/~georgefa/wp-content/uploads/2013/02/Mexican_Family.jpg]]></image>
-        <alt><![CDATA[]]></alt>
-        <title><![CDATA[]]></title>
-        <thumbnail_image><![CDATA[]]></thumbnail_image>
-        <thumbnail_alt><![CDATA[]]></thumbnail_alt>
-        <thumbnail_title><![CDATA[]]></thumbnail_title>
-        <thumbnail_content><![CDATA[]]></thumbnail_content>
-        <layer_1_content><![CDATA[I am a call to action. I\'ll tell you what to do next.
-&lt;br /&gt;
-[maxbutton id=\&quot;6\&quot;]]]></layer_1_content>
-        <slide_link_path><![CDATA[]]></slide_link_path>
-        <slide_link_title><![CDATA[]]></slide_link_title>
-        <thumbnail_link_path><![CDATA[]]></thumbnail_link_path>
-        <thumbnail_link_title><![CDATA[]]></thumbnail_link_title>
-      </content>
-      <settings>
-        <layers_num>1</layers_num>
-        <layers_ids>+1+</layers_ids>
-        <layer_1_settings>layer_transition=none+layer_offset=50+layer_easing=swing+layer_duration=400+layer_delay=0+layer_position=topLeft+layer_horizontal=5%+layer_vertical=40%+layer_width=auto+layer_height=auto+layer_preset_styles=white,static,rounded</layer_1_settings>
-        <slide_link_target>_self</slide_link_target>
-        <slide_link_lightbox>0</slide_link_lightbox>
-        <thumbnail_link_target>_self</thumbnail_link_target>
-        <thumbnail_link_lightbox>0</thumbnail_link_lightbox>
-        <slide_type>static</slide_type>
-      </settings>
-      <position>4</position>
-      <panel_state>opened</panel_state>
-      <selected_tab>2</selected_tab>
-      <visibility>enabled</visibility>
-    </slide>
-    <slide>
-      <id>746</id>
+      <id>777</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide5]]></name>
       <content>
@@ -246,9 +202,102 @@
         <thumbnail_link_lightbox>0</thumbnail_link_lightbox>
         <slide_type>static</slide_type>
       </settings>
-      <position>5</position>
+      <position>4</position>
       <panel_state>opened</panel_state>
       <selected_tab>0</selected_tab>
+      <visibility>enabled</visibility>
+    </slide>
+    <slide>
+      <id>778</id>
+      <slider_id>2</slider_id>
+      <name><![CDATA[Slide 6]]></name>
+      <content>
+        <image><![CDATA[http://gf.dev/wp-content/uploads/2013/02/family-tablet-slider.jpg]]></image>
+        <alt><![CDATA[]]></alt>
+        <title><![CDATA[]]></title>
+        <thumbnail_image><![CDATA[]]></thumbnail_image>
+        <thumbnail_alt><![CDATA[]]></thumbnail_alt>
+        <thumbnail_title><![CDATA[]]></thumbnail_title>
+        <thumbnail_content><![CDATA[]]></thumbnail_content>
+        <slide_link_path><![CDATA[/]]></slide_link_path>
+        <slide_link_title><![CDATA[]]></slide_link_title>
+        <thumbnail_link_path><![CDATA[]]></thumbnail_link_path>
+        <thumbnail_link_title><![CDATA[]]></thumbnail_link_title>
+      </content>
+      <settings>
+        <layers_num>0</layers_num>
+        <layers_ids></layers_ids>
+        <slide_link_target>_self</slide_link_target>
+        <slide_link_lightbox>0</slide_link_lightbox>
+        <thumbnail_link_target>_self</thumbnail_link_target>
+        <thumbnail_link_lightbox>0</thumbnail_link_lightbox>
+        <slide_type>static</slide_type>
+      </settings>
+      <position>5</position>
+      <panel_state>opened</panel_state>
+      <selected_tab>3</selected_tab>
+      <visibility>enabled</visibility>
+    </slide>
+    <slide>
+      <id>779</id>
+      <slider_id>2</slider_id>
+      <name><![CDATA[Slide6]]></name>
+      <content>
+        <image><![CDATA[http://gf.dev/wp-content/uploads/2013/02/birthday-slider.jpg]]></image>
+        <alt><![CDATA[]]></alt>
+        <title><![CDATA[]]></title>
+        <thumbnail_image><![CDATA[]]></thumbnail_image>
+        <thumbnail_alt><![CDATA[]]></thumbnail_alt>
+        <thumbnail_title><![CDATA[]]></thumbnail_title>
+        <thumbnail_content><![CDATA[]]></thumbnail_content>
+        <slide_link_path><![CDATA[/]]></slide_link_path>
+        <slide_link_title><![CDATA[]]></slide_link_title>
+        <thumbnail_link_path><![CDATA[]]></thumbnail_link_path>
+        <thumbnail_link_title><![CDATA[]]></thumbnail_link_title>
+      </content>
+      <settings>
+        <layers_num>1</layers_num>
+        <layers_ids>+</layers_ids>
+        <slide_link_target>_self</slide_link_target>
+        <slide_link_lightbox>0</slide_link_lightbox>
+        <thumbnail_link_target>_self</thumbnail_link_target>
+        <thumbnail_link_lightbox>0</thumbnail_link_lightbox>
+        <slide_type>static</slide_type>
+      </settings>
+      <position>6</position>
+      <panel_state>opened</panel_state>
+      <selected_tab>3</selected_tab>
+      <visibility>enabled</visibility>
+    </slide>
+    <slide>
+      <id>780</id>
+      <slider_id>2</slider_id>
+      <name><![CDATA[Slide 7]]></name>
+      <content>
+        <image><![CDATA[http://gf.dev/wp-content/uploads/2013/02/hiking-slider.jpg]]></image>
+        <alt><![CDATA[]]></alt>
+        <title><![CDATA[]]></title>
+        <thumbnail_image><![CDATA[]]></thumbnail_image>
+        <thumbnail_alt><![CDATA[]]></thumbnail_alt>
+        <thumbnail_title><![CDATA[]]></thumbnail_title>
+        <thumbnail_content><![CDATA[]]></thumbnail_content>
+        <slide_link_path><![CDATA[/]]></slide_link_path>
+        <slide_link_title><![CDATA[]]></slide_link_title>
+        <thumbnail_link_path><![CDATA[]]></thumbnail_link_path>
+        <thumbnail_link_title><![CDATA[]]></thumbnail_link_title>
+      </content>
+      <settings>
+        <layers_num>0</layers_num>
+        <layers_ids></layers_ids>
+        <slide_link_target>_self</slide_link_target>
+        <slide_link_lightbox>0</slide_link_lightbox>
+        <thumbnail_link_target>_self</thumbnail_link_target>
+        <thumbnail_link_lightbox>0</thumbnail_link_lightbox>
+        <slide_type>static</slide_type>
+      </settings>
+      <position>7</position>
+      <panel_state>opened</panel_state>
+      <selected_tab>3</selected_tab>
       <visibility>enabled</visibility>
     </slide>
   </slides>

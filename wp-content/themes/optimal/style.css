@@ -695,17 +695,17 @@ ul.menu li.sfHover ul,
     float: left;
 	line-height: 22px;
     margin: 0;
-    padding-right: 30px;
-    width: 220px;
+    padding-right: 20px;
+    width: 230px;
 }
 
 .home-feature-sidebar h4 {
 	color: #333;
-    font-family: 'Oswald',arial,sans-serif;
-    font-size: 28px;
-    font-weight: normal;
-    line-height: 34px;
-    text-transform: none;
+    font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    padding: 0;
 }
 
 .home-feature-sidebar p {
@@ -3355,6 +3355,7 @@ div.gform_wrapper .gform_footer {
 	}
 	
 	.slider-inner {
+		display: none;
 		padding: 0 !important;
 		overflow: hidden;
 		width: 100%;
@@ -3384,10 +3385,10 @@ div.gform_wrapper .gform_footer {
 	}
 	
 	.home-feature-sidebar {
-		font-size: 16px;
+		display: block;
 		line-height: 24px;	
-		margin: 0 0 20px;
-		padding: 0;
+		margin: 0;
+		padding: 0 0 0 10px;
 		width: auto;
 		text-align: center;
 	}	
@@ -3414,7 +3415,7 @@ div.gform_wrapper .gform_footer {
 	
 	.home-feature-1 h4, 
 	.home-feature-2 h4	{
-		font-size: 24px;
+		font-size: 16px;
 		line-height: 32px;
 	}
 	
@@ -3448,8 +3449,8 @@ div.gform_wrapper .gform_footer {
 	}
 	
 	.home-featured-posts h2 {
-		font-size: 24px;
-		line-height: 32px;
+		font-size: 16px;
+		line-height: 24px;
 		margin: 10px 0 0;
 	}
 	
@@ -3491,7 +3492,8 @@ div.gform_wrapper .gform_footer {
 	}	
 	
 	#inner {
-		padding: 20px 0 0;
+		padding: 0;
+		margin-top: -20px;
 		width: 92%;
 	}
 
@@ -4338,12 +4340,12 @@ div.gform_wrapper .gform_footer {
 	}
 	
 	.home-feature-sidebar {
+		display: none;
 		padding: 0;
-		width: 30%;
 	}
 	
 	.home-feature-section {		
-		width: 60%;
+		width: 100%;
 	}
 	
 	.home-feature-1, 
