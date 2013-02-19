@@ -240,14 +240,35 @@ body {
 
 #header .widget-area {
 	float: right;
-	padding: 10px 0 0;
-	width: 700px;
+	padding: 0 0 10px;
+	margin-top: -20px;
+	width: auto;
+	text-align: right;
+	font-family: 'Oswald',arial,serif;
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 200;
 }
 
 
 #header .widget {
-	margin: 0 0 10px;
+	margin: -40px 0 10px;
     overflow: hidden;	
+}
+
+#phoneNumbers ul {
+	list-style-type: none;
+}
+
+.lightBlue {
+	color: #B5DEFB;
+	padding-right: 7px;
+}
+
+.hunterGreen {
+	color: #4d6a34;
+	padding-right: 7px;
 }
 
 
@@ -263,7 +284,9 @@ body {
 	overflow: hidden;
 	padding: 0;
 	text-indent: -9999px;
-	width: 960px;
+	width: 100%;
+	background: url("http://gf.dev/wp-content/uploads/2013/02/george-financial-logo.jpg") no-repeat 0 0 transparent;
+	background-size: 100%;
 }
 
 .header-image #description {
@@ -349,7 +372,7 @@ li a .sf-sub-indicator {
 .menu-secondary { }
 
 #subnav {
-	background: #000;
+	background: #4D6A34;
 	border-bottom: 1px solid #888;		
 }
 
@@ -2032,7 +2055,7 @@ a.button.silver {
 
 #footer-widgets a {
     color: #fff;
-    font-weight: bold;
+    font-weight: none;
 	text-decoration: none;
 }	
 
@@ -2072,7 +2095,7 @@ a.button.silver {
 ------------------------------------------------------------ */
 
 #footer {
-    background: #000;
+    background: #4D6A34;
     border-top: 1px solid #191919;	
     clear: both;
     color: #fff;	
@@ -2088,7 +2111,7 @@ a.button.silver {
 }
 
 #footer p {
-    color: #999;
+    color: #ffffff;
 	font-size: 12px;
 }
 
@@ -2256,7 +2279,7 @@ div.gform_wrapper .gform_footer {
     background-color: #f5f5f5;	
     background-position: center bottom;
     background-repeat: no-repeat;
-    margin: 0 auto;
+    margin: 0 auto -30px;
     padding: 20px 0 20px !important;
     width: 960px;	
 }
@@ -3208,7 +3231,11 @@ div.gform_wrapper .gform_footer {
 	
 	#header {
 		width: 100%;
-	}	
+	}
+
+	.header-image #title-area, .header-image #title, .header-image #title a {
+	    width: 115%;
+   	}		
 
 	.archive-page,
 	.content-sidebar #content,
@@ -3265,11 +3292,21 @@ div.gform_wrapper .gform_footer {
 		padding: 10px 0;
 	}
 
+
 	#header .widget-area {
-		margin-bottom: 20px;
+		margin: -5px 0 20px;
 		padding: 20px 0 0;
+		text-align: left;
 	}
 	
+	#phoneNumbers {
+		padding-left: 20px;
+	}
+
+	.header-image #title-area {
+	margin: 0 0 0 20px;
+}
+
 	#header .menu {
 		float: none;	
 		text-align: center;
@@ -4227,8 +4264,7 @@ div.gform_wrapper .gform_footer {
 	}
 
 	#header .widget-area {
-		margin-bottom: 20px;
-		padding: 0 0 10px;
+		/* padding: 40px 0 0; */
 	}
 
 	#header .searchform {
@@ -4359,15 +4395,24 @@ div.gform_wrapper .gform_footer {
 	}
 	
 	.home-bottom-sidebar {
-		width: 30%;
+    	float: none;
+    	font-size: 16px;
+    	line-height: 24px;
+    	margin: 0 auto;
+    	padding: 0;
+    	text-align: center;
+    	width: 96%;
 	}
 	
 	.home-featured-posts {	
-		width: 68%;
+		width: 96%;
 	}
 	
 	.home-featured-posts .featuredpage .page, .home-featured-posts .featuredpost .post {
-		width: 45%;
+		width: 30%;
+		float: left;
+		margin: 0 7px 20px;
+		overflow: hidden;
 	}
 	
 	.featuredpage img, 

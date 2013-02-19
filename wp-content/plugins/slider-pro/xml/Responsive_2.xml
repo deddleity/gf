@@ -5,7 +5,7 @@
     <slide_width>932</slide_width>
     <slide_height>493</slide_height>
     <width>900</width>
-    <height>400</height>
+    <height></height>
     <responsive>1</responsive>
     <aspect_ratio>0</aspect_ratio>
     <skin>glossy-curved-square-orange</skin>
@@ -84,11 +84,11 @@
 }]]></custom_css>
   <slides>
     <slide>
-      <id>774</id>
+      <id>795</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide3]]></name>
       <content>
-        <image><![CDATA[http://174.132.161.150/~georgefa/wp-content/uploads/2013/02/Rocks.jpg]]></image>
+        <image><![CDATA[http://gf.dev/wp-content/uploads/2013/02/Rocks1.jpg]]></image>
         <alt><![CDATA[]]></alt>
         <title><![CDATA[]]></title>
         <thumbnail_image><![CDATA[http://174.132.161.150/~georgefa/wp-content/uploads/2013/02/Rocks.jpg]]></thumbnail_image>
@@ -115,7 +115,7 @@
       <visibility>enabled</visibility>
     </slide>
     <slide>
-      <id>775</id>
+      <id>796</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide2]]></name>
       <content>
@@ -146,7 +146,7 @@
       <visibility>enabled</visibility>
     </slide>
     <slide>
-      <id>776</id>
+      <id>797</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide1]]></name>
       <content>
@@ -177,11 +177,11 @@
       <visibility>enabled</visibility>
     </slide>
     <slide>
-      <id>777</id>
+      <id>798</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide5]]></name>
       <content>
-        <image><![CDATA[http://174.132.161.150/~georgefa/wp-content/uploads/2013/02/Beach.jpg]]></image>
+        <image><![CDATA[http://gf.dev/wp-content/uploads/2013/02/Beach1.jpg]]></image>
         <alt><![CDATA[]]></alt>
         <title><![CDATA[]]></title>
         <thumbnail_image><![CDATA[]]></thumbnail_image>
@@ -208,7 +208,7 @@
       <visibility>enabled</visibility>
     </slide>
     <slide>
-      <id>778</id>
+      <id>799</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide 6]]></name>
       <content>
@@ -239,7 +239,7 @@
       <visibility>enabled</visibility>
     </slide>
     <slide>
-      <id>779</id>
+      <id>800</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide6]]></name>
       <content>
@@ -270,7 +270,7 @@
       <visibility>enabled</visibility>
     </slide>
     <slide>
-      <id>780</id>
+      <id>801</id>
       <slider_id>2</slider_id>
       <name><![CDATA[Slide 7]]></name>
       <content>
