@@ -31,7 +31,7 @@
 										<i class="icon-plus-sign icon-large"></i>
 									</div><!--/.ai1ec-event-toggle-->
 									<span class="ai1ec-event-title">
-										<?php echo esc_html( apply_filters( 'the_title', $event->post->post_title ) ) ?>
+										<?php echo esc_html( apply_filters( 'the_title', $event->post->post_title, $event->post_id ) ) ?>
 										<?php if ( $show_location_in_title && isset( $event->venue ) && $event->venue != '' ): ?>
 											<span class="ai1ec-event-location"><?php echo sprintf( __( '@ %s', AI1EC_PLUGIN_NAME ), $event->venue ); ?></span>
 										<?php endif; ?>

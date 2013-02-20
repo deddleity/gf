@@ -43,7 +43,7 @@
 
 										<div class="ai1ec-event"
 											style="<?php echo $event->get_color_style(); ?>">
-											<span class="ai1ec-event-title"><?php echo esc_html( apply_filters( 'the_title', $event->post->post_title ) ) ?></span>
+											<span class="ai1ec-event-title"><?php echo esc_html( apply_filters( 'the_title', $event->post->post_title, $event->post_id ) ) ?></span>
 											<?php if( ! $event->allday ) : ?>
 												<span class="ai1ec-event-time"><?php echo esc_html( $event->get_short_start_time() ) ?></span>
 											<?php endif ?>
@@ -57,10 +57,10 @@
 										<span class="ai1ec-popup-title popover-title">
 											<a href="<?php echo esc_attr( get_permalink( $event->post_id ) ) . $event->instance_id ?>">
 												<?php if( function_exists( 'mb_strimwidth' ) ) : ?>
-													<?php echo esc_html( apply_filters( 'the_title', mb_strimwidth( $event->post->post_title, 0, 35, '...' ) ) );
+													<?php echo esc_html( apply_filters( 'the_title', mb_strimwidth( $event->post->post_title, 0, 35, '...' ), $event->post_id ) );
 												else : ?>
 													<?php $read_more = strlen( $event->post->post_title ) > 35 ? '...' : ''; ?>
-													<?php echo esc_html( apply_filters( 'the_title', substr( $event->post->post_title, 0, 35 ) . $read_more ) );
+													<?php echo esc_html( apply_filters( 'the_title', substr( $event->post->post_title, 0, 35 ) . $read_more, $event->post_id ) );
 												endif;
 											?></a>
 											<?php if ( $show_location_in_title && isset( $event->venue ) && $event->venue != '' ): ?>

@@ -34,34 +34,38 @@ echo '<?xml version="1.0" encoding="',
 
 
 foreach ( $event_results['events'] as $event ){
-	$title = htmlspecialchars( $event->post->post_title );
-	$permalink = htmlspecialchars( get_permalink( $event->post_id ) );
-	$date = date('d M Y H:i:s', $event->start );
-	$user_info = get_userdata( $event->post->post_author );
-	$location = str_replace( "\n", ', ', rtrim( $event->get_location() ) );
+	$title       = htmlspecialchars(
+		apply_filters( 'the_title', $event->post->post_title, $event->post_id )
+	);
+	$permalink   = htmlspecialchars( get_permalink( $event->post_id ) );
+	$date        = date('d M Y H:i:s', $event->start );
+	$user_info   = get_userdata( $event->post->post_author );
+	$location    = str_replace( "\n", ', ', rtrim( $event->get_location() ) );
 	$use_excerpt = Ai1ec_Meta::get_option( 'rss_use_excerpt' );
-	$description = $event->post->post_content;
-	if( $use_excerpt ) {
+	$description = apply_filters( 'the_content', $event->post->post_content );
+	if ( $use_excerpt ) {
 		$description = Ai1ec_String_Utility::truncate_string_if_longer_than_x_words(
-			$event->post->post_content,
+			$description,
 			50,
 			" <a href='$permalink' >" . __( 'Read more...', AI1EC_PLUGIN_NAME ) . "</a>"
 		);
 	}
 	$args = array(
-		"timespan"    => $event->get_timespan_html(),
-		"location"    => $location,
-		"permalink"   => $permalink,
-		"description" => wpautop( $description )
+		'timespan'    => $event->get_timespan_html(),
+		'location'    => $location,
+		'permalink'   => $permalink,
+		'description' => wpautop( $description ),
 	);
 	// Load the RSS specific template
 	ob_start();
 	$ai1ec_view_helper->display_theme( 'event-feed-description.php', $args );
 	$content = ob_get_contents();
 	ob_end_clean();
-	$user = $user_info->user_login;
-	$guid = htmlspecialchars( get_the_guid( $event->post_id ) );
-	$comments = esc_url( get_post_comments_feed_link( $event->post_id, 'rss2' ) );
+	$user            = $user_info->user_login;
+	$guid            = htmlspecialchars( get_the_guid( $event->post_id ) );
+	$comments        = esc_url(
+		get_post_comments_feed_link( $event->post_id, 'rss2' )
+	);
 	$comments_number = get_comments_number( $event->post_id );
 	echo <<<FEED
 <item>

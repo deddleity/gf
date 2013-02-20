@@ -826,6 +826,10 @@ ul.menu li.sfHover ul,
 	margin: 0 0 20px 30px;
 }
 
+.home-featured-posts h4 {
+	font-size: 24px;
+}
+
 .home-featured-posts .featuredpost .post {
 	margin: 0 15px 0 0;
 	width: 221px;
@@ -2121,7 +2125,7 @@ a.button.silver {
 }
 
 #footer a:hover {
-	color: #666;
+	color: #B5DEFB;
 	text-decoration: none;
 }
 

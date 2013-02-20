@@ -51,40 +51,49 @@ class Ai1ec_Importer_Helper {
 	 * Passed array: Array( 'year', 'month', 'day', ['hour', 'min', 'sec', ['tz']] )
 	 * Return int: UNIX timestamp in GMT
 	 *
-	 * @param array $t iCalcreator's time property array (*full* format expected)
+	 * @param array  $time         iCalcreator time property array (*full* format expected)
 	 * @param string $def_timezone Default time zone in case not defined in $t
 	 *
 	 * @return int UNIX timestamp
 	 **/
-	function time_array_to_timestamp( $t, $def_timezone ) {
-		$ret = $t['value']['year'] .
-			'-' . $t['value']['month'] .
-			'-' . $t['value']['day'];
-		if ( isset( $t['value']['hour'] ) ) {
-			$ret .= ' ' . $t['value']['hour'] .
-				':' . $t['value']['min'] .
-				':' . $t['value']['sec'];
-		}
-		$timezone = '';
-		if ( isset( $t['value']['tz'] ) && $t['value']['tz'] == 'Z' ) {
-			$timezone = 'Z';
-		}
-		elseif ( isset( $t['params']['TZID'] ) ) {
-			$timezone = $t['params']['TZID'];
+	function time_array_to_timestamp( array $time, $def_timezone ) {
+		$parseable = sprintf(
+			'%4d-%02d-%02d',
+			$time['value']['year'],
+			$time['value']['month'],
+			$time['value']['day']
+		);
+		if ( isset( $time['value']['hour'] ) ) {
+			$parseable .= sprintf(
+				' %02d:%02d:%02d',
+				$time['value']['hour'],
+				$time['value']['min'],
+				$time['value']['sec']
+			);
 		}
 
+		$timezone = '';
+		if ( isset( $time['params']['TZID'] ) ) {
+			$timezone = $time['params']['TZID'];
+		} elseif (
+			isset( $time['value']['tz'] ) &&
+			'Z' === $time['value']['tz']
+		) {
+			$timezone = 'UTC';
+		}
 		if ( empty( $timezone ) ) {
 			$timezone = $def_timezone;
-		} else {
+		}
+
+		if ( ! empty( $timezone ) ) {
 			$timezone = Ai1ec_Tzparser::instance()->get_name( $timezone );
 			if ( false === $timezone ) {
 				return false;
 			}
+			$parseable .= ' ' . $timezone;
 		}
-		if ( $timezone ) {
-			$ret .= ' ' . $timezone;
-		}
-		return strtotime( $ret );
+
+		return strtotime( $parseable );
 	}
 
 	/**
@@ -135,6 +144,28 @@ class Ai1ec_Importer_Helper {
 	}
 
 	/**
+	 * _is_timeless method
+	 *
+	 * Check if date-time specification has no (empty) time component.
+	 *
+	 * @param array $datetime Datetime array returned by iCalcreator
+	 *
+	 * @return bool Timelessness
+	 */
+	protected function _is_timeless( array $datetime ) {
+		$timeless = true;
+		foreach ( array( 'hour', 'min', 'sec' ) as $field ) {
+			$timeless &= (
+				isset( $datetime[$field] ) &&
+				0 != $datetime[$field]
+			)
+				? false
+				: true;
+		}
+		return $timeless;
+	}
+
+	/**
 	 * add_vcalendar_events_to_db method
 	 *
 	 * Process vcalendar instance - add events to database
@@ -179,8 +210,8 @@ class Ai1ec_Importer_Helper {
 			$start = $e->getProperty( 'dtstart', 1, true );
 			$end   = $e->getProperty( 'dtend', 1, true );
 			// For cases where a "VEVENT" calendar component
-			// specifies a "DTSTART" property with a DATE value type but no
-			// "DTEND" nor "DURATION" property, the event's duration is taken to
+			// specifies a "DTSTART" property with a DATE value type but none
+			// of "DTEND" nor "DURATION" property, the event duration is taken to
 			// be one day.  For cases where a "VEVENT" calendar component
 			// specifies a "DTSTART" property with a DATE-TIME value type but no
 			// "DTEND" property, the event ends on the same calendar date and
@@ -208,7 +239,8 @@ class Ai1ec_Importer_Helper {
 			}
 
 			// Event is all-day if no time components are defined
-			$allday = ! isset( $start['value']['hour'] );
+			$allday = $this->_is_timeless( $start['value'] ) &&
+			          $this->_is_timeless( $end['value'] );
 			// Also check the proprietary MS all-day field.
 			$ms_allday = $e->getProperty( 'X-MICROSOFT-CDO-ALLDAYEVENT' );
 			if ( ! empty( $ms_allday ) && $ms_allday[1] == 'TRUE' ) {
@@ -217,7 +249,7 @@ class Ai1ec_Importer_Helper {
 
 			// convert times to GMT UNIX timestamps
 			$start = $this->time_array_to_timestamp( $start, $timezone );
-			$end   = $this->time_array_to_timestamp( $end, $timezone );
+			$end   = $this->time_array_to_timestamp( $end,   $timezone );
 
 			if ( false === $start || false === $end ) {
 				trigger_error(
@@ -234,18 +266,6 @@ class Ai1ec_Importer_Helper {
 			// after start time.
 			if ( $allday && $start === $end ) {
 				$end += 24 * 60 * 60;
-			}
-
-			// Due to potential time zone differences (WP time zone vs. feed time
-			// zone), must set all-day event start/end dates to midnight of the
-			// respective days, in the *local* time zone.
-			if ( $allday ) {
-				$start = $ai1ec_events_helper->gmgetdate( $start );
-				$start = gmmktime( 0, 0, 0, $start['mon'], $start['mday'], $start['year'] );
-				$start = $ai1ec_events_helper->local_to_gmt( $start );
-				$end = $ai1ec_events_helper->gmgetdate( $end );
-				$end = gmmktime( 0, 0, 0, $end['mon'], $end['mday'], $end['year'] );
-				$end = $ai1ec_events_helper->local_to_gmt( $end );
 			}
 
 			$data += compact( 'start', 'end', 'allday' );
@@ -438,13 +458,12 @@ class Ai1ec_Importer_Helper {
 				! empty( $event->recurrence_rules )
 			);
 
-			if( is_null( $matching_event_id ) ) {
+			if ( NULL === $matching_event_id ) {
 				// =================================================
 				// = Event was not found, so store it and the post =
 				// =================================================
 				$event->save();
-			}
-			else {
+			} else {
 				// ======================================================
 				// = Event was found, let's store the new event details =
 				// ======================================================

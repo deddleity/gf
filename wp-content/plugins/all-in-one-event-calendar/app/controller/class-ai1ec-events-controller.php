@@ -230,7 +230,6 @@ class Ai1ec_Events_Controller {
 			$all_day_event    = $event->allday ? 'checked' : '';
 			$instant_event    = $event->instant_event ? 'checked' : '';
 
-
 			$start_timestamp  = $ai1ec_events_helper->gmt_to_local( $event->start );
 			$end_timestamp 	  = $ai1ec_events_helper->gmt_to_local( $event->end );
 
@@ -589,10 +588,19 @@ class Ai1ec_Events_Controller {
 	 */
 	public function event_content_jsonp( Ai1ec_Abstract_Query $request ) {
 		global $ai1ec_events_helper;
-		$event = $ai1ec_events_helper->get_event( get_the_ID() );
+		$event   = $ai1ec_events_helper->get_event( get_the_ID() );
 		$event->set_request( $request );
-		$title = $event->post->post_title;
-		$content = $this->get_view( $event, wpautop( $event->post->post_content ) );
+		$title   = apply_filters(
+			'the_title',
+			$event->post->post_title,
+			$event->post_id
+		);
+		$content = $this->get_view(
+			$event,
+			wpautop(
+				apply_filters( 'the_content', $event->post->post_content )
+			)
+		);
 		$article = <<<HTML
 	<article>
 		<header>
@@ -622,8 +630,9 @@ HTML;
 		global $ai1ec_view_helper,
 		       $ai1ec_events_helper;
 
-		if( get_post_type() != AI1EC_POST_TYPE )
+		if ( get_post_type() != AI1EC_POST_TYPE ) {
 			return $text;
+		}
 
 		$event = new Ai1ec_Event( get_the_ID() );
 
@@ -633,10 +642,11 @@ HTML;
 
 		// Re-apply any filters to the post content that normally would have been
 		// applied if it weren't for our interference (below).
-		echo
-		 	shortcode_unautop( wpautop(
-				$ai1ec_events_helper->trim_excerpt( $event->post->post_content )
-			) );
+		echo shortcode_unautop( wpautop(
+				$ai1ec_events_helper->trim_excerpt(
+					apply_filters( 'the_content', $event->post->post_content )
+				)
+		) );
 
 		$page_content = ob_get_contents();
 		ob_end_clean();
@@ -652,10 +662,10 @@ HTML;
 	 *
 	 * @return void
 	 **/
-	function event_excerpt_noautop( $content )
-	{
-		if( get_post_type() != AI1EC_POST_TYPE )
+	function event_excerpt_noautop( $content ) {
+		if ( get_post_type() != AI1EC_POST_TYPE ) {
 			return wpautop( $content );
+		}
 		return $content;
 	}
 

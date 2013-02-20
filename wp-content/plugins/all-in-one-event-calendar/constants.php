@@ -24,14 +24,17 @@ function ai1ec_initiate_constants() {
 	// = Plugin Basename =
 	// ===================
 	if ( ! defined( 'AI1EC_PLUGIN_BASENAME' ) ) {
-		define( 'AI1EC_PLUGIN_BASENAME',    plugin_basename( __FILE__ ) );
+		$plugin = dirname( __FILE__ ) . DIRECTORY_SEPARATOR .
+			AI1EC_PLUGIN_NAME . '.php';
+		define( 'AI1EC_PLUGIN_BASENAME',    plugin_basename( $plugin ) );
+		unset( $plugin );
 	}
 
 	// ==================
 	// = Plugin Version =
 	// ==================
 	if ( ! defined( 'AI1EC_VERSION' ) ) {
-		define( 'AI1EC_VERSION',            '1.9.2-standard' );
+		define( 'AI1EC_VERSION',            '1.9.3-standard' );
 	}
 
 	// ====================
@@ -52,16 +55,16 @@ function ai1ec_initiate_constants() {
 	// = Cron Version =
 	// ================
 	if ( ! defined( 'AI1EC_CRON_VERSION' ) ) {
-		define( 'AI1EC_CRON_VERSION',       103 );
+		define( 'AI1EC_CRON_VERSION',       104 );
 	}
 	if ( ! defined( 'AI1EC_N_CRON_VERSION' ) ) {
-		define( 'AI1EC_N_CRON_VERSION',     101 );
+		define( 'AI1EC_N_CRON_VERSION',     102 );
 	}
 	if ( ! defined( 'AI1EC_N_CRON_FREQ' ) ) {
 		define( 'AI1EC_N_CRON_FREQ',        'daily' );
 	}
 	if ( ! defined( 'AI1EC_U_CRON_VERSION' ) ) {
-		define( 'AI1EC_U_CRON_VERSION',     106 );
+		define( 'AI1EC_U_CRON_VERSION',     107 );
 	}
 	if ( ! defined( 'AI1EC_U_CRON_FREQ' ) ) {
 		define( 'AI1EC_U_CRON_FREQ',        'hourly' );

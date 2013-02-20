@@ -531,10 +531,19 @@ class Ai1ec_Event {
 		// Localize time.
 		$start      = $ai1ec_events_helper->gmt_to_local( $this->start );
 		$end        = $ai1ec_events_helper->gmt_to_local( $this->end );
+
+		// Get the time difference. Round down to days difference.
+		$days_diff  = floor( ( $end - $start ) / ( 60 * 60 * 24 ) );
+
+		$end_offset = 0;
+		if ( $days_diff > 0 && $days_diff < 2 ) {
+			$end_offset = -1;
+		}
+
 		// All-day events need to have their end time shifted by 1 second less to
 		// land on the correct day.
 		if ( $this->allday ) {
-			$end--;
+			$end += $end_offset;
 		}
 
 		// Get components of localized time to calculate start & end dates.
@@ -590,17 +599,16 @@ class Ai1ec_Event {
 			// If event ends on a different day, output end date.
 			if( $date_start !== $date_end ) {
 				// Figure out how much detail to output for end date.
-				// Get the time difference. Round down to days difference.
-				$days_diff = floor( ( $end - $start ) / ( 60 * 60 * 24 ) );
 
 				// We need to check two things: if the difference is >= 7 we are sure we
 				// need the long version. There is an edge case: An event which starts
 				// at 8PM on Tuesday 16 and ends at 1AM on Tuesday 23.
 				// This returns 6 days of difference, so we need the second check.
-				if( $days_diff >= 7 || ( $days_diff > 1 && $day_end === $day_start ) ) {
+				if ( $days_diff > 0 && $days_diff < 2 ) {
+					$end_date_display = 'hidden';
+				} elseif ( $days_diff >= 7 || ( $days_diff > 1 && $day_end === $day_start ) ) {
 					$end_date_display = 'full';
-				}
-				else {
+				} else {
 					$end_date_display = 'weekday';
 				}
 			}
@@ -614,7 +622,7 @@ class Ai1ec_Event {
 					break;
 				default:
 				case 'full':
-					$output .= $this->get_long_end_date();
+					$output .= $this->get_long_end_date( $end_offset );
 					break;
 			}
 			// Output end time for non-all-day events.
@@ -735,11 +743,11 @@ class Ai1ec_Event {
 	 */
 	public function get_long_end_date() {
 		global $ai1ec_events_helper;
-		return $ai1ec_events_helper->get_long_date( $this->end - 1 );
+		return $ai1ec_events_helper->get_long_date( $this->end );
 	}
 
 	/**
-	 * Get the post's excerpt for display in popup view
+	 * Get excerpt of post content for display in popup view
 	 */
 	public function get_post_excerpt() {
 		if (
@@ -747,7 +755,9 @@ class Ai1ec_Event {
 			empty( $this->post->post_excerpt )
 		) {
 			$content = strip_tags(
-				strip_shortcodes( $this->post->post_content )
+				strip_shortcodes(
+					apply_filters( 'the_content', $this->post->post_content )
+				)
 			);
 			$content = preg_replace( '/\s+/', ' ', $content );
 			$words = explode( ' ', $content );

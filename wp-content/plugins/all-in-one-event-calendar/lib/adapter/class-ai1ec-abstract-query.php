@@ -61,7 +61,8 @@ abstract class Ai1ec_Abstract_Query implements arrayaccess
 	 */
 	public function __construct( array $argv = NULL ) {
 		if ( NULL === $argv ) {
-			$request_uri = urldecode( $_SERVER['REQUEST_URI'] );
+			$request_uri = explode( '?', $_SERVER['REQUEST_URI'] );
+			$request_uri = urldecode( $request_uri[0] );
 			$argv = trim( $request_uri, '/' );
 			if ( ( $arg_start = strpos( $argv, '/' ) ) > 0 ) {
 				$argv = substr( $argv, $arg_start + 1 );

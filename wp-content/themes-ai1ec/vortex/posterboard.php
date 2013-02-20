@@ -30,8 +30,8 @@
 									    href="<?php echo esc_attr( get_permalink( $event->post_id ) . $event->instance_id ) ?>"
 									   <?php echo $event->get_category_text_color(); ?>
 									   <?php echo $data_type_events ?>
-									   title="<?php echo esc_attr( apply_filters( 'the_title', $event->post->post_title ) ) ?>" >
-										<?php echo esc_html( apply_filters( 'the_title', $event->post->post_title ) ) ?>
+									   title="<?php echo esc_attr( apply_filters( 'the_title', $event->post->post_title, $event->post_id ) ) ?>" >
+										<?php echo esc_html( apply_filters( 'the_title', $event->post->post_title, $event->post_id ) ) ?>
 									</a>
 									<?php if ( $show_location_in_title && isset( $event->venue ) && $event->venue != '' ): ?>
 										<span class="ai1ec-event-location"><?php echo sprintf( __( '@ %s', AI1EC_PLUGIN_NAME ), $event->venue ); ?></span>

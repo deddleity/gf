@@ -338,8 +338,15 @@ class Ai1ec_Facebook_Event {
 	public function populate_event_from_ai1ec_event( Ai1ec_Event $event ) {
 		$this->start_time  = self::get_facebook_actual_time( $event->start );
 		$this->end_time    = self::get_facebook_actual_time( $event->end );
-		$this->name        = $event->post->post_title;
-		$this->description = $event->post->post_content;
+		$this->name        = apply_filters(
+			'the_title',
+			$event->post->post_title,
+			$event->post_id
+		);
+		$this->description = apply_filters(
+			'the_content',
+			$event->post->post_content
+		);
 		$this->city        = $event->city;
 		$this->country     = $event->country;
 		$this->state       = $event->province;

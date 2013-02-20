@@ -120,3 +120,11 @@ genesis_register_sidebar( array(
 	'name'			=> __( 'Home Bottom Message', 'optimal' ),
 	'description'	=> __( 'This is the bottom section of the homepage right before the footer.', 'optimal' ),
 ) );
+
+/** Custom Read More link for Genesis Post Excerpts */
+function custom_read_more_link() {
+return '...<br /><a href="' .get_permalink() .'" rel="nofollow">[Read More]</a>';
+}
+add_filter( 'excerpt_more', 'custom_read_more_link' );
+add_filter( 'get_the_content_more_link', 'custom_read_more_link' );
+add_filter( 'the_content_more_link', 'custom_read_more_link' );

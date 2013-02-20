@@ -48,29 +48,43 @@ class Ai1ec_Exporter_Helper {
 	 * Convert an event from a feed into a new Ai1ec_Event object and add it to
 	 * the calendar.
 	 *
-	 * @param object $event Event object
-	 * @param object $c Calendar object
-	 * @param bool $export States whether events are created for export
+	 * @param Ai1ec_Event $event    Event object
+	 * @param vcalendar   $calendar Calendar object
+	 * @param bool        $export   States whether events are created for export
 	 *
 	 * @return void
 	 */
 	function insert_event_in_calendar(
-		Ai1ec_Event $event, &$c, $export = false
+		Ai1ec_Event $event,
+		vcalendar &$calendar,
+		$export = false
 	) {
 		global $ai1ec_events_helper;
 
 		$tz = Ai1ec_Meta::get_option( 'timezone_string' );
 
-		$e = & $c->newComponent( 'vevent' );
+		$e = & $calendar->newComponent( 'vevent' );
 		$uid = $event->ical_uid ?
 			$event->ical_uid : addcslashes( $event->post->guid, "\\;,\n" );
 		$e->setProperty( 'uid', $uid );
-		$e->setProperty( 'url', get_permalink( $event->post_id ) );
+		$e->setProperty(
+			'url',
+			get_permalink( $event->post_id )
+		);
 
 		// =========================
 		// = Summary & description =
 		// =========================
-		$e->setProperty( 'summary', html_entity_decode( apply_filters( 'the_title', $event->post->post_title ), ENT_QUOTES, 'UTF-8' ) );
+		$e->setProperty(
+			'summary',
+			$this->_sanitize_value(
+				html_entity_decode(
+					apply_filters( 'the_title', $event->post->post_title ),
+					ENT_QUOTES,
+					'UTF-8'
+				)
+			)
+		);
 		$content = apply_filters( 'the_content', $event->post->post_content );
 		$content = str_replace(']]>', ']]&gt;', $content);
 		$content = html_entity_decode( $content, ENT_QUOTES, 'UTF-8' );
@@ -81,7 +95,7 @@ class Ai1ec_Exporter_Helper {
 				esc_attr( $img_url ) . '" width="' . $size[0] . '" height="' .
 				$size[1] . '" /></div>' . $content;
 		}
-		$e->setProperty( 'description', $content );
+		$e->setProperty( 'description', $this->_sanitize_value( $content ) );
 
 		// =====================
 		// = Start & end times =
@@ -95,13 +109,43 @@ class Ai1ec_Exporter_Helper {
 				$dtstart["TZID"] = $dtend["TZID"] = $tz;
 			}
 
-			// For exporting all day events, only set the date not the time
+			// For exportin' all day events, only set the date not the time
 			if ( $export ) {
-				$e->setProperty( 'dtstart', gmdate( "Ymd", $ai1ec_events_helper->gmt_to_local( $event->start ) ), $dtstart );
-				$e->setProperty( 'dtend', gmdate( "Ymd", $ai1ec_events_helper->gmt_to_local( $event->end ) ), $dtend );
+				$e->setProperty(
+					'dtstart',
+					$this->_sanitize_value( gmdate(
+						"Ymd",
+						$ai1ec_events_helper->gmt_to_local( $event->start )
+					) ),
+					$dtstart
+				);
+				$e->setProperty(
+					'dtend',
+					$this->_sanitize_value( gmdate(
+						"Ymd",
+						$ai1ec_events_helper->gmt_to_local( $event->end )
+					) ),
+					$dtend
+				);
 			} else {
-				$e->setProperty( 'dtstart', gmdate( "Ymd\T", $ai1ec_events_helper->gmt_to_local( $event->start ) ), $dtstart );
-				$e->setProperty( 'dtend', gmdate( "Ymd\T", $ai1ec_events_helper->gmt_to_local( $event->end ) ), $dtend );
+				$e->setProperty(
+					'dtstart',
+					$this->_sanitize_value(
+						gmdate(
+							"Ymd\T",
+							$ai1ec_events_helper->gmt_to_local( $event->start )
+						)
+					),
+					$dtstart
+				);
+				$e->setProperty(
+					'dtend',
+					$this->_sanitize_value( gmdate(
+						"Ymd\T",
+						$ai1ec_events_helper->gmt_to_local( $event->end )
+					) ),
+					$dtend
+				);
 			}
 		} else {
 			if ( $tz ) {
@@ -111,10 +155,19 @@ class Ai1ec_Exporter_Helper {
 			$dtstartstring = gmdate( "Ymd\THis",
 				$ai1ec_events_helper->gmt_to_local( $event->start )
 			);
-			$e->setProperty( 'dtstart', $dtstartstring, $dtstart );
+			$e->setProperty(
+				'dtstart',
+				$this->_sanitize_value( $dtstartstring ),
+				$dtstart
+			);
 
-			$e->setProperty( 'dtend', gmdate( "Ymd\THis",
-				$ai1ec_events_helper->gmt_to_local( $event->end ) ), $dtend
+			$e->setProperty(
+				'dtend',
+				$this->_sanitize_value( gmdate(
+					"Ymd\THis",
+					$ai1ec_events_helper->gmt_to_local( $event->end )
+				) ),
+				$dtend
 			);
 		}
 
@@ -132,17 +185,20 @@ class Ai1ec_Exporter_Helper {
 			$location = array( $event->venue, $event->address );
 			$location = array_filter( $location );
 			$location = implode( ' @ ', $location );
-			$e->setProperty( 'location', $location );
+			$e->setProperty( 'location', $this->_sanitize_value( $location ) );
 		}
 
 		// ==================
 		// = Cost & tickets =
 		// ==================
 		if ( $event->cost ) {
-			$e->setProperty( 'X-COST', $event->cost );
+			$e->setProperty( 'X-COST', $this->_sanitize_value( $event->cost ) );
 		}
 		if ( $event->ticket_url ) {
-			$e->setProperty( 'X-TICKETS-URL', $event->ticket_url );
+			$e->setProperty(
+				'X-TICKETS-URL',
+				$this->_sanitize_value( $event->ticket_url )
+			);
 		}
 
 		// ====================================
@@ -156,7 +212,7 @@ class Ai1ec_Exporter_Helper {
 		);
 		$contact = array_filter( $contact );
 		$contact = implode( '; ', $contact );
-		$e->setProperty( 'contact', $contact );
+		$e->setProperty( 'contact', $this->_sanitize_value( $contact ) );
 
 		// ====================
 		// = Recurrence rules =
@@ -241,9 +297,13 @@ class Ai1ec_Exporter_Helper {
 		}
 
 		// add rrule to exported calendar
-		if ( ! empty( $rrule ) )  $e->setProperty( 'rrule', $rrule );
+		if ( ! empty( $rrule ) ) {
+			$e->setProperty( 'rrule', $this->_sanitize_value( $rrule ) );
+		}
 		// add exrule to exported calendar
-		if ( ! empty( $exrule ) ) $e->setProperty( 'exrule', $exrule );
+		if ( ! empty( $exrule ) ) {
+			$e->setProperty( 'exrule', $this->_sanitize_value( $exrule ) );
+		}
 
 		// ===================
 		// = Exception dates =
@@ -285,4 +345,29 @@ class Ai1ec_Exporter_Helper {
 			}
 		}
 	}
+
+	/**
+	 * _sanitize_value method
+	 *
+	 * Convert value, so it be safe to use on ICS feed. Used before passing to
+	 * iCalcreator methods, for rendering.
+	 *
+	 * @param string $value Text to be sanitized
+	 *
+	 * @return string Safe value, for use in HTML
+	 */
+	protected function _sanitize_value( $value ) {
+		$safe_eol = "\n";
+		$value    = strtr(
+			$value,
+			array(
+				"\r\n" => $safe_eol,
+				"\r"   => $safe_eol,
+				"\n"   => $safe_eol,
+			)
+		);
+		$value = addcslashes( $value, '\\' );
+		return $value;
+	}
+
 }
