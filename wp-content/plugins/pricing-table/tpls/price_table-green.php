@@ -12,7 +12,7 @@
   
     
     <div id="shaon-pricing-table">
-    <div class="pricing-table"  style="margin-bottom: 80px;" >
+    <div class="pricing-table" >
         <div class="col1">
             <div class="featureTitle">
             <span>FEATURE</span></div>
@@ -98,15 +98,3 @@
   
   
    <!-- end pt -->
- 
-
-  <script language="JavaScript">
-   
-        var v = jQuery('.col1').length;
-       
-        var cw = (95/v);
-        
-        jQuery('.col1').css('width',cw+'%');
-        
-           
-  </script>

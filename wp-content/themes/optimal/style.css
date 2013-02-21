@@ -3558,7 +3558,7 @@ div.gform_wrapper .gform_footer {
 	.post,
 	#comments,
 	#respond {
-		padding: 0 20px;
+		padding: 30px 20px 0;
 	}
 
 	.author-box {
